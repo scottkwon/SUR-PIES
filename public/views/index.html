@@ -22,77 +22,78 @@
 
         <section class="toppings">
             <label for="toppings">Please select at least one topping:</label>
-            <div id="toppings">
-                <select name="toppingOne" id="toppingOne">
-                    <option value="">---</option>
-                    <option value="Anchovy">Anchovy</option>
-                    <option value="Bacon">Bacon</option>
-                    <option value="Canadian Style Baconw">Canadian Style Bacon</option>
-                    <option value="Carnitas">Carnitas</option>
-                    <option value="Chicken">Chicken</option>
-                    <option value="Chorizo">Chorizo</option>
-                    <option value="Fresh Ground Beef">Fresh Ground Beef</option>
-                    <option value="Italian Salami">Italian Salami</option>
-                    <option value="Meatball">Meatball</option>
-                    <option value="Pepperoni">Pepperoni</option>
-                    <option value="Sausage">Sausage</option>
-                    <option value="Black Olive">Black Olive</option>
-                    <option value="Chopped Garlic">Chopped Garlic</option> 
-                    <option value="Fresh Basil">Fresh Basil</option>
-                    <option value="Fresh Bell Pepper">Fresh Bell Pepper</option>
-                    <option value="Fresh Cilantro">Fresh Cilantro</option>
-                    <option value="Fresh Jalapenos">Fresh Jalapenos</option>
-                    <option value="Fresh Mushroom">Fresh Mushroom</option>
-                    <option value="Fresh Red Onion">Fresh Red Onion</option>
-                    <option value="Fresh Roma Tomato">Fresh Roma Tomato</option>
-                    <option value="Fresh Yellow Onion">Fresh Yellow Onion</option>
-                    <option value="Fresh Zucchini">Fresh Zucchini</option>
-                    <option value="Fried Onion">Fried Onion</option>
-                    <option value="Pepperoncini Peppers">Pepperoncini Peppers</option>
-                    <option value="Honey Drizzle">Honey Drizzle</option>
-                    <option value="Nacho Jalapenos">Nacho Jalapenos</option>
-                    <option value="Pineapple Chunks">Pineapple Chunks</option>
-                    <option value="Roasted Garlic Cloves">Roasted Garlic Cloves</option>
-                    <option value="Roasted Grape Tomatoes">Roasted Grape Tomatoes</option>
-                    <option value="Roasted Red Pepper">Roasted Red Pepper</option>
-                </select>
-                <select name="toppingTwo" id="toppingTwo">
-                    <option value="">---</option>
-                    <option value="Anchovy">Anchovy</option>
-                    <option value="Bacon">Bacon</option>
-                    <option value="Canadian Style Baconw">Canadian Style Bacon</option>
-                    <option value="Carnitas">Carnitas</option>
-                    <option value="Chicken">Chicken</option>
-                    <option value="Chorizo">Chorizo</option>
-                    <option value="Fresh Ground Beef">Fresh Ground Beef</option>
-                    <option value="Italian Salami">Italian Salami</option>
-                    <option value="Meatball">Meatball</option>
-                    <option value="Pepperoni">Pepperoni</option>
-                    <option value="Sausage">Sausage</option>
-                    <option value="Black Olive">Black Olive</option>
-                    <option value="Chopped Garlic">Chopped Garlic</option> 
-                    <option value="Fresh Basil">Fresh Basil</option>
-                    <option value="Fresh Bell Pepper">Fresh Bell Pepper</option>
-                    <option value="Fresh Cilantro">Fresh Cilantro</option>
-                    <option value="Fresh Jalapenos">Fresh Jalapenos</option>
-                    <option value="Fresh Mushroom">Fresh Mushroom</option>
-                    <option value="Fresh Red Onion">Fresh Red Onion</option>
-                    <option value="Fresh Roma Tomato">Fresh Roma Tomato</option>
-                    <option value="Fresh Yellow Onion">Fresh Yellow Onion</option>
-                    <option value="Fresh Zucchini">Fresh Zucchini</option>
-                    <option value="Fried Onion">Fried Onion</option>
-                    <option value="Pepperoncini Peppers">Pepperoncini Peppers</option>
-                    <option value="Honey Drizzle">Honey Drizzle</option>
-                    <option value="Nacho Jalapenos">Nacho Jalapenos</option>
-                    <option value="Pineapple Chunks">Pineapple Chunks</option>
-                    <option value="Roasted Garlic Cloves">Roasted Garlic Cloves</option>
-                    <option value="Roasted Grape Tomatoes">Roasted Grape Tomatoes</option>
-                    <option value="Roasted Red Pepper">Roasted Red Pepper</option>
-                </select>
-                <button>🍕</button>
+            <div id="toppingSelection">
+                <form action="/" method="POST">
+                    <select name="toppingOne" id="toppingOne">
+                        <option value="">---</option>
+                        <option value="Anchovy">Anchovy</option>
+                        <option value="Bacon">Bacon</option>
+                        <option value="Canadian Style Baconw">Canadian Style Bacon</option>
+                        <option value="Carnitas">Carnitas</option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Chorizo">Chorizo</option>
+                        <option value="Fresh Ground Beef">Fresh Ground Beef</option>
+                        <option value="Italian Salami">Italian Salami</option>
+                        <option value="Meatball">Meatball</option>
+                        <option value="Pepperoni">Pepperoni</option>
+                        <option value="Sausage">Sausage</option>
+                        <option value="Black Olive">Black Olive</option>
+                        <option value="Chopped Garlic">Chopped Garlic</option> 
+                        <option value="Fresh Basil">Fresh Basil</option>
+                        <option value="Fresh Bell Pepper">Fresh Bell Pepper</option>
+                        <option value="Fresh Cilantro">Fresh Cilantro</option>
+                        <option value="Fresh Jalapenos">Fresh Jalapenos</option>
+                        <option value="Fresh Mushroom">Fresh Mushroom</option>
+                        <option value="Fresh Red Onion">Fresh Red Onion</option>
+                        <option value="Fresh Roma Tomato">Fresh Roma Tomato</option>
+                        <option value="Fresh Yellow Onion">Fresh Yellow Onion</option>
+                        <option value="Fresh Zucchini">Fresh Zucchini</option>
+                        <option value="Fried Onion">Fried Onion</option>
+                        <option value="Pepperoncini Peppers">Pepperoncini Peppers</option>
+                        <option value="Honey Drizzle">Honey Drizzle</option>
+                        <option value="Nacho Jalapenos">Nacho Jalapenos</option>
+                        <option value="Pineapple Chunks">Pineapple Chunks</option>
+                        <option value="Roasted Garlic Cloves">Roasted Garlic Cloves</option>
+                        <option value="Roasted Grape Tomatoes">Roasted Grape Tomatoes</option>
+                        <option value="Roasted Red Pepper">Roasted Red Pepper</option>
+                    </select>
+                    <select name="toppingTwo" id="toppingTwo">
+                        <option value="">---</option>
+                        <option value="Anchovy">Anchovy</option>
+                        <option value="Bacon">Bacon</option>
+                        <option value="Canadian Style Baconw">Canadian Style Bacon</option>
+                        <option value="Carnitas">Carnitas</option>
+                        <option value="Chicken">Chicken</option>
+                        <option value="Chorizo">Chorizo</option>
+                        <option value="Fresh Ground Beef">Fresh Ground Beef</option>
+                        <option value="Italian Salami">Italian Salami</option>
+                        <option value="Meatball">Meatball</option>
+                        <option value="Pepperoni">Pepperoni</option>
+                        <option value="Sausage">Sausage</option>
+                        <option value="Black Olive">Black Olive</option>
+                        <option value="Chopped Garlic">Chopped Garlic</option> 
+                        <option value="Fresh Basil">Fresh Basil</option>
+                        <option value="Fresh Bell Pepper">Fresh Bell Pepper</option>
+                        <option value="Fresh Cilantro">Fresh Cilantro</option>
+                        <option value="Fresh Jalapenos">Fresh Jalapenos</option>
+                        <option value="Fresh Mushroom">Fresh Mushroom</option>
+                        <option value="Fresh Red Onion">Fresh Red Onion</option>
+                        <option value="Fresh Roma Tomato">Fresh Roma Tomato</option>
+                        <option value="Fresh Yellow Onion">Fresh Yellow Onion</option>
+                        <option value="Fresh Zucchini">Fresh Zucchini</option>
+                        <option value="Fried Onion">Fried Onion</option>
+                        <option value="Pepperoncini Peppers">Pepperoncini Peppers</option>
+                        <option value="Honey Drizzle">Honey Drizzle</option>
+                        <option value="Nacho Jalapenos">Nacho Jalapenos</option>
+                        <option value="Pineapple Chunks">Pineapple Chunks</option>
+                        <option value="Roasted Garlic Cloves">Roasted Garlic Cloves</option>
+                        <option value="Roasted Grape Tomatoes">Roasted Grape Tomatoes</option>
+                        <option value="Roasted Red Pepper">Roasted Red Pepper</option>
+                    </select>
+                    <input type="submit" value="🍕">
+                </form>
             </div>
         </section>
     </main>
-
 </body>
 </html>

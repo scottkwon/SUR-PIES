@@ -3,14 +3,16 @@
 // Random pizza function
 exports.generate_random_pizza = (req, res) => {
 
+    console.log(req);
+
     // grab toppings from request
     let toppingOne;
     let toppingTwo;
 
     // recommendations array for both toppings
-    let recs;
+    let recs = [];
     // alternate recommendations for only one topping
-    let altRecs;
+    let altRecs = [];
 
     // call service to get list of all speciality pizzas
     let specialityPizzas;
