@@ -1,7 +1,6 @@
 import { Pizza } from "../interfaces/pizzaInterface";
 
-
-let pizzas: Array<Pizza> = [
+const specialtyPizzas: Array<Pizza> = [
     {
         "id": 1,
         "name": "TOPPERS COMBINATION",
@@ -63,3 +62,26 @@ let pizzas: Array<Pizza> = [
         "toppings": ["Creamy Garlic Sauce", "Salami", "Red Onion", "Fresh Jalapenos", "Bacon Pieces", "Honey Drizzle"]
     }
 ]
+
+let generate_random_pizza: object = (toppingOne: string, toppingTwo: string) => {
+
+    console.log(specialtyPizzas);
+    
+    // recommendations array for both toppings
+    let recs = [];
+    // alternate recommendations for only one topping (if there are no options with both toppings)
+    let altRecs = [];
+
+    // call service to get list of all speciality pizzas
+    // let specialityPizzas;
+
+    /* 
+        loop through speciality pizzas and check to see if a pizza has the two toppings
+
+        - keep an array of 1/2 toppings to recommend as an alternative recs
+    */
+
+    // generate random number from 0 - (alt)rec length. return (alt)rec at random index
+
+    return {}
+}

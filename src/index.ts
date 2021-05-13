@@ -6,12 +6,11 @@ import path from "path";
 class CodingChallenge {
   private port = process.env.PORT;
   public app: express.Application;
-  
+
   constructor() {
     this.app = express();
     this.config();
     this.routes();
-    this.controllers();
   }
 
   public start(): void {
@@ -20,19 +19,13 @@ class CodingChallenge {
     );
   }
 
-
   // Controller
   public routes(): void {
     this.app.get("/", (req, res) => res.sendFile(path.join(__dirname + "/../public/views/index.html")));
-    this.app.post("/", (req, res) => 
-      var recController = require('../controllers');
+    this.app.post("/", (req, res) =>
       // recController.generate_random_pizza(req.body.toppingOne, req.body.toppingTwo)
-            
+      res.send("This is product page")
     );
-  }
-
-  public controllers(): void {
-    
   }
 
   public config() {
