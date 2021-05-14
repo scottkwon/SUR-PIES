@@ -2,10 +2,13 @@ import cors from "cors";
 import "dotenv/config";
 import express from "express";
 import path from "path";
+// import pizzaModel from "../models/pizzaModel";
+
 
 class CodingChallenge {
   private port = process.env.PORT;
   public app: express.Application;
+  private pizzaModel = require("../models/pizzaModel");
 
   constructor() {
     this.app = express();
@@ -23,8 +26,7 @@ class CodingChallenge {
   public routes(): void {
     this.app.get("/", (req, res) => res.sendFile(path.join(__dirname + "/../public/views/index.html")));
     this.app.post("/", (req, res) =>
-      // recController.generate_random_pizza(req.body.toppingOne, req.body.toppingTwo)
-      res.send("This is product page")
+      let recommendation = this.pizzaModel.generate_random_pizza(req.body.toppingOne, req.body.toppingTwo)
     );
   }
 

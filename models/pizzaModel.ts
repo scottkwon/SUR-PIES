@@ -1,6 +1,6 @@
 import { Pizza } from "../interfaces/pizzaInterface";
 
-const specialtyPizzas: Array<Pizza> = [
+ const specialtyPizzas: Array<Pizza> = [
     {
         "id": 1,
         "name": "TOPPERS COMBINATION",
@@ -34,7 +34,7 @@ const specialtyPizzas: Array<Pizza> = [
     {
         "id": 7,
         "name": "B•C•T",
-        "toppings": ["Pepperoni", "Bacon Pieces", "Chicken", "Fresh Roma Tomatoes"]
+        "toppings": ["Pepperoni", "Bacon", "Chicken", "Fresh Roma Tomatoes"]
     },
     {
         "id": 8,
@@ -44,36 +44,33 @@ const specialtyPizzas: Array<Pizza> = [
     {
         "id": 9,
         "name": "HAWAIIAN HEAT",
-        "toppings": ["Creamy Garlic Sauce", "Canadian Style Bacon", "Chicken", "Bacon Pieces", "Red Onions", "Pineapples", "Jalapenos"]
+        "toppings": ["Creamy Garlic Sauce", "Canadian Style Bacon", "Chicken", "Bacon", "Red Onions", "Pineapples", "Jalapenos"]
     },
     {
         "id": 10,
         "name": "THE MEATINATOR",
-        "toppings": ["Original Pizza Sauce", "Canadian Style Bacon", "Salami", "Pepperoni", "Hot Sliced Sausage", "Bacon Pieces", "Italian Sausage"]
+        "toppings": ["Original Pizza Sauce", "Canadian Style Bacon", "Salami", "Pepperoni", "Hot Sliced Sausage", "Bacon", "Italian Sausage"]
     },
     {
         "id": 11,
         "name": "BUFFALO CHICKEN",
-        "toppings": ["Creamy Garlic Sauce", "Cheddar and Provolone Cheese", "Chicken", "Red Onion", "Pepperoncini Peppers", "Bacon Pieces", "French Fried Onions"]
+        "toppings": ["Creamy Garlic Sauce", "Cheddar and Provolone Cheese", "Chicken", "Red Onion", "Pepperoncini Peppers", "Bacon", "French Fried Onions"]
     },
     {
         "id": 12,
         "name": "HOT HONEY",
-        "toppings": ["Creamy Garlic Sauce", "Salami", "Red Onion", "Fresh Jalapenos", "Bacon Pieces", "Honey Drizzle"]
+        "toppings": ["Creamy Garlic Sauce", "Salami", "Red Onion", "Fresh Jalapenos", "Bacon", "Honey Drizzle"]
     }
 ]
 
-let generate_random_pizza: object = (toppingOne: string, toppingTwo: string) => {
+module.exports.generate_random_pizza = (toppingOne: string, toppingTwo: string) => {
 
-    console.log(specialtyPizzas);
+    // Assume I have made a call to the DB to retrieve all pizzas with the variable: specialtyPizzas
     
     // recommendations array for both toppings
     let recs = [];
     // alternate recommendations for only one topping (if there are no options with both toppings)
     let altRecs = [];
-
-    // call service to get list of all speciality pizzas
-    // let specialityPizzas;
 
     /* 
         loop through speciality pizzas and check to see if a pizza has the two toppings
@@ -81,7 +78,31 @@ let generate_random_pizza: object = (toppingOne: string, toppingTwo: string) => 
         - keep an array of 1/2 toppings to recommend as an alternative recs
     */
 
+    for(let pizza of specialtyPizzas) {
+
+        let hasToppingOne: Boolean = false;
+        let hasToppingTwo: Boolean = false;
+
+        for(let topping of pizza.toppings) {
+            if(topping.toLowerCase() == toppingOne.toLowerCase()) {
+                hasToppingOne = true;
+            }
+            if(topping.toLowerCase() == toppingTwo.toLowerCase()) {
+                hasToppingTwo = true;
+            }
+        }
+
+        if (hasToppingOne && hasToppingTwo) {
+            recs.push(pizza.name)
+        }
+        if(hasToppingOne || hasToppingTwo) {
+            altRecs.push(pizza.name)
+        }
+    }
+
+    let recommendations = recs ? recs: altRecs;
+
     // generate random number from 0 - (alt)rec length. return (alt)rec at random index
 
-    return {}
+    return recommendations
 }

@@ -1,8 +1,5 @@
-export interface BasePizza {
+export interface Pizza {
+    id: Number,
     name: String,
-    toppings: Array<string>
-}
-  
-export interface Pizza extends BasePizza {
-    id: number;
-}
+    toppings: Array<String>
+} 
