@@ -1,4 +1,5 @@
 import cors from "cors";
+import { resolveNaptr } from "dns";
 import "dotenv/config";
 import express from "express";
 import path from "path";
@@ -25,8 +26,8 @@ class CodingChallenge {
   // Controller
   public routes(): void {
     this.app.get("/", (req, res) => res.sendFile(path.join(__dirname + "/../public/views/index.html")));
-    this.app.post("/", (req, res) =>
-      let recommendation = this.pizzaModel.generate_random_pizza(req.body.toppingOne, req.body.toppingTwo)
+    this.app.post("/", (req, res) =>~
+      this.pizzaModel.generate_random_pizza(req.body.toppingOne, req.body.toppingTwo)
     );
   }
 

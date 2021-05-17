@@ -4,12 +4,12 @@ import { Pizza } from "../interfaces/pizzaInterface";
     {
         "id": 1,
         "name": "TOPPERS COMBINATION",
-        "toppings": ["Salami", "Pepperoni", "Italian Sausage", "Ground Beef", "Mushrooms", "Olives", "Onions", "Bell Peppers", "Anchovies"]
+        "toppings": ["Salami", "Pepperoni", "Italian Sausage", "Ground Beef", "Mushrooms", "Black Olive", "Onions", "Bell Peppers", "Anchovies"]
     },
     {
         "id": 2,
         "name": "VEGETARIAN COMBINATION",
-        "toppings": ["Mushrooms", "Olives", "Onions", "Bell Peppers", "Zucchini", "Roasted Red Peppers", "Fresh Roma Tomatoes"]
+        "toppings": ["Mushrooms", "Black Olive", "Onions", "Bell Peppers", "Zucchini", "Roasted Red Peppers", "Fresh Roma Tomatoes"]
     },
     {
         "id": 3,
@@ -19,7 +19,7 @@ import { Pizza } from "../interfaces/pizzaInterface";
     {
         "id": 4,
         "name": "CARNITAS CHIPOTLE",
-        "toppings": ["Chipotle Sauce", "Carnitas", "Roasted Red Peppers", "Olives", "Red Onions", "Cilantro", "Jalapenos"]
+        "toppings": ["Chipotle Sauce", "Carnitas", "Roasted Red Peppers", "Black Olive", "Red Onions", "Cilantro", "Jalapenos"]
     },
     {
         "id": 5,
@@ -93,16 +93,15 @@ module.exports.generate_random_pizza = (toppingOne: string, toppingTwo: string) 
         }
 
         if (hasToppingOne && hasToppingTwo) {
-            recs.push(pizza.name)
+            recs.push(pizza)
         }
         if(hasToppingOne || hasToppingTwo) {
-            altRecs.push(pizza.name)
+            altRecs.push(pizza)
         }
     }
 
-    let recommendations = recs ? recs: altRecs;
+    let recommendations = recs.length ? recs: altRecs;
+    let randomIndex = Math.floor(Math.random() * recommendations.length)
 
-    // generate random number from 0 - (alt)rec length. return (alt)rec at random index
-
-    return recommendations
+    return recommendations[randomIndex]
 }
